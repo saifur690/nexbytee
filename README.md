@@ -44,3 +44,16 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+## BrowserRouter routes
+
+The app uses React Router BrowserRouter with `/`, `/about`, `/service`,
+`/industries` and `/contact`. Internal navigation uses `Link`; URLs do not
+use a hash. `npm start` supports direct navigation and refresh on these routes.
+
+For production hosting, configure an SPA fallback: requests for routes that are
+not real static files must serve `build/index.html` with status 200. Continue
+serving actual assets normally. Without this server fallback, refreshing a route
+such as `/about` can return a server 404. No production host has been configured
+in this repository.

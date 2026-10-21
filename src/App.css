@@ -1,38 +1,49 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  container-type: inline-size;
+  width: 100%;
+  min-width: 0;
   display: flex;
+  min-height: 100vh;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: #fbfbfd;
 }
 
-.App-link {
-  color: #61dafb;
+.content-page {
+  width: min(100% - 40px, 1120px);
+  flex: 1;
+  margin: 0 auto;
+  padding: 40px 0 72px;
+  outline: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.page-intro {
+  max-width: 720px;
+}
+
+.page-intro h1 {
+  margin: 0 0 18px;
+  color: #15151a;
+  font-size: clamp(36px, 6vw, 56px);
+  line-height: 1.08;
+  letter-spacing: -2px;
+}
+
+.page-intro > p:last-of-type {
+  color: #707b91;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.hero-eyebrow {
+  margin: 0 0 12px;
+  color: #7950f2;
+  font: 700 10px Consolas, "Courier New", monospace;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 520px) {
+  .content-page {
+    width: calc(100% - 32px);
+    padding-top: 28px;
   }
 }

@@ -1,0 +1,235 @@
+@font-face {
+  font-family: 'Nexbyte Poppins';
+  src: url('../fonts/Poppins-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nexbyte Poppins';
+  src: url('../fonts/Poppins-SemiBold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  width: min(100% - 40px, 1120px);
+  min-height: 55px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 0 auto 20px;
+  background: rgba(251, 251, 253, 0.94);
+}
+
+.navbar::after {
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+  width: 100vw;
+  border-bottom: 1px solid #e4e5ec;
+  content: "";
+  transform: translateX(50%);
+  pointer-events: none;
+}
+
+.navbar-logo {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+}
+
+.navbar-logo-mark {
+  display: block;
+  width: 44px;
+  height: 34px;
+  fill: #7950f2;
+}
+
+.navbar-logo-type {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  color: #08080a;
+  font-family: 'Nexbyte Poppins', Arial, sans-serif;
+  line-height: 1;
+}
+
+.navbar-logo-type strong {
+  display: block;
+  font-family: 'Nexbyte Poppins', Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.7px;
+}
+
+.navbar-logo-type small {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  line-height: 12px;
+  letter-spacing: 1.6px;
+  color: #17171d;
+  padding-left: 1px;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.navbar-links a {
+  position: relative;
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 13px;
+  color: #484b57;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.navbar-links a:not(.navbar-demo)::after {
+  position: absolute;
+  right: 13px;
+  bottom: 4px;
+  left: 13px;
+  height: 2px;
+  border-radius: 2px;
+  background: #7950ff;
+  content: '';
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s ease;
+}
+
+.navbar-links a:not(.navbar-demo):hover::after,
+.navbar-links a:not(.navbar-demo):focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+@media (max-width: 760px) {
+  .navbar-links a:not(.navbar-demo)::after { right: 8px; left: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar-links a:not(.navbar-demo)::after { transition: none; }
+}
+
+.navbar-links a:hover,
+.navbar-links a[aria-current='page'] {
+  color: #7650ee;
+}
+
+.navbar a:focus-visible {
+  outline: 2px solid #7652ff;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    width: calc(100% - 32px);
+    min-height: 52px;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .navbar-logo-mark {
+    width: 40px;
+    height: 31px;
+  }
+
+  .navbar-logo-type strong {
+    font-size: 21px;
+  }
+
+  .navbar-logo-type small {
+    font-size: 8px;
+    letter-spacing: 1.4px;
+  }
+
+  .navbar-links {
+    gap: 0;
+  }
+
+  .navbar-links a {
+    min-height: 38px;
+    padding: 7px 8px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 370px) {
+  .navbar {
+    width: calc(100% - 24px);
+    gap: 5px;
+  }
+
+  .navbar-logo-mark {
+    width: 38px;
+  }
+
+  .navbar-logo-type strong {
+    font-size: 20px;
+  }
+
+  .navbar-links a {
+    padding-inline: 6px;
+    font-size: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar-links a {
+    transition: none;
+  }
+}
+
+.navbar { z-index: 20; }
+.navbar-company { position: relative; }
+.navbar-company-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 5px; min-height: 40px; padding: 8px 10px; border: 0; border-radius: 7px; background: transparent; color: #484b57; font: 500 12px Arial, sans-serif; cursor: pointer; }
+.navbar-company-toggle svg { width: 10px; height: 10px; fill: none; stroke: currentColor; stroke-width: 1.2; }
+.navbar-company-toggle:hover, .navbar-company-toggle[aria-expanded='true'] { background: #f3efff; color: #7950ff; }
+.navbar-company-menu { position: absolute; z-index: 30; top: 100%; left: 0; min-width: 170px; padding: 7px; border: 1px solid #e2e3ed; border-radius: 11px; background: #fff; box-shadow: 0 12px 28px #24213912; }
+.navbar-company-menu:not([hidden]) { display: grid; gap: 2px; }
+.navbar-links .navbar-company-menu a { display: flex; align-items: center; justify-content: flex-start; width: 100%; min-height: 28px; padding: 8px 9px; border-radius: 5px; color: #343540; font-size: 11px; line-height: 1.5; white-space: nowrap; }
+.navbar-links .navbar-company-menu a:hover { background: #f5f2ff; color: #7950ff; }
+.navbar-company-toggle:focus-visible { outline: 2px solid #7950ff; outline-offset: 3px; }
+@media (max-width: 760px) { .navbar-company-toggle { padding: 10px 8px; } .navbar-company-menu { left: auto; right: 0; } }
+@media (max-width: 600px) { .navbar-company-toggle { min-height: 38px; padding: 7px 6px; font-size: 11px; } }
+@media (max-width: 380px) { .navbar-company-toggle { padding-inline: 4px; font-size: 10px; } }
+
+.navbar-links a.navbar-demo {
+  min-height: 30px;
+  margin-left: 14px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #774bff;
+  box-shadow: 0 6px 15px #774bff26;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.navbar-links a.navbar-demo:hover { background: #6840e8; color: #fff; }
+@media (max-width: 760px) {
+  .navbar-links a.navbar-demo { margin-left: 0; padding: 14px 20px; }
+}
+@media (max-width: 520px) {
+  .navbar-links a.navbar-demo { margin-top: 6px; }
+}

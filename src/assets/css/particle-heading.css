@@ -1,0 +1,9 @@
+.particle-heading { position: relative; max-width: 510px; }
+.particle-heading-canvas { position: absolute; top: -28px; left: -28px; display: none; max-width: none; pointer-events: none; opacity: 1; filter: none; mix-blend-mode: normal; }
+.particle-heading[data-particles] .hero-flip-letter { animation: none; transform: none; opacity: 1; }
+.particle-heading[data-particles='active'] .particle-heading-source { opacity: 0; }
+.particle-heading[data-particles='active'] .particle-heading-canvas { display: block; }
+@media (prefers-reduced-motion: reduce) {
+  .particle-heading[data-particles='active'] .particle-heading-source { opacity: 1; }
+  .particle-heading .particle-heading-canvas { display: none; }
+}
